@@ -8,13 +8,13 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-3.times { User.create(name: Faker::Name.name, banned: [true, false].sample) }
+3.times { User.create(name: Faker::Name.name, banned: [ true, false ].sample) }
 5.times { Book.create(title: Faker::Book.title) }
 
-10.times do 
+10.times do
   Review.create(
-    user: User.all.sample, 
-    book: Book.all.sample, 
-    stars: rand(1..5), 
-    content: Faker::Lorem.paragraph(sentence_count: 3)) 
+    user: User.all.sample,
+    book: Book.all.sample,
+    stars: rand(1..5),
+    content: Faker::Lorem.paragraph(sentence_count: 3))
 end

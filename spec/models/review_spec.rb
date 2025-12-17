@@ -17,8 +17,8 @@ RSpec.describe Review, type: :model do
   end
 
   it "It is not valid if the stars are not between 1 and 5" do
-    review = Review.new(stars: 7, user: user, book: book )
-    
+    review = Review.new(stars: 7, user: user, book: book)
+
     expect(review).not_to be_valid
   end
 
@@ -36,7 +36,7 @@ RSpec.describe Review, type: :model do
   describe "#valid_for_average?" do
     it "returns true if the user is not banned" do
       review = Review.new(user: user)
-  
+
       expect(review.valid_for_average?).to eq(true)
     end
 

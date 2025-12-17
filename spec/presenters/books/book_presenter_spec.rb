@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe Books::BookPresenter do
   let(:book) { create(:book, title: "book presenter") }
 
-  describe "#title" do 
-    it "returns the formatted and capitalized title" do 
-      presenter = described_class.new(book) 
-      expect(presenter.title).to eq("Book presenter") 
-    end 
+  describe "#title" do
+    it "returns the formatted and capitalized title" do
+      presenter = described_class.new(book)
+      expect(presenter.title).to eq("Book presenter")
+    end
   end
 
   describe "#average_reviews_label" do
@@ -15,7 +15,7 @@ RSpec.describe Books::BookPresenter do
       result = described_class.new(book)
       expect(result.average_reviews_label).to eq("Reseñas Insuficientes")
     end
-    
+
     it "show the formatted average" do
       3.times { create(:review, book: book, stars: 4) }
 

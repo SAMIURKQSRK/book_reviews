@@ -13,9 +13,9 @@ RSpec.describe Books::CalculateReviewsAverageService do
   it "Ignore reviews from banned users" do
     banned_user = create(:user, :banned)
 
-    create(:review, book: book, stars: 5) 
+    create(:review, book: book, stars: 5)
     create(:review, book: book, stars: 3)
-    create(:review, book: book, stars: 4) 
+    create(:review, book: book, stars: 4)
     create(:review, book: book, user: banned_user, stars: 4)
 
     result = described_class.new(book).call
