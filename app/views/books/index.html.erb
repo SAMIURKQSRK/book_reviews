@@ -1,0 +1,10 @@
+<h1>Libros</h1>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <h2><%= link_to book.title, book_path(book.instance_variable_get(:@book)) %></h2>
+      <p><%= book.average_reviews_label %></p>
+    </li>
+  <% end %>
+</ul>

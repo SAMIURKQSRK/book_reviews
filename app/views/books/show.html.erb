@@ -1,0 +1,18 @@
+<h1><%= @book.title %></h1>
+
+<p><%= @book.average_reviews_label %></p>
+
+<h2>Reseñas</h2>
+
+<ul>
+  <% @book.reviews.each do |review| %>
+    <li>
+      <strong><%= review.stars %> estrellas</strong>
+      <% if review.user.banned? %>
+        (usuario baneado, no cuenta para el promedio)
+      <% end %>
+      <br>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>
